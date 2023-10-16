@@ -1,0 +1,27 @@
+.bouncyLine {
+  height: 1px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+
+  svg {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: -50px;
+
+    path {
+      stroke-width: 1px;
+      stroke: white;
+      fill: none;
+    }
+  }
+  .bouncyLine--box {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    top: -20px;
+    z-index: 1;
+  }
+}
