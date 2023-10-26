@@ -4,18 +4,15 @@ import "./bouncystring.scss";
 
 type TBouncyStringProps = {
   lineDelta: number;
-  defaultTime: number;
+  step: number;
 };
 
-export default function BouncyString({
-  lineDelta,
-  defaultTime,
-}: TBouncyStringProps) {
+export default function BouncyString({ lineDelta, step }: TBouncyStringProps) {
   // reference to the path
   const pathRef = useRef<SVGPathElement>(null);
   let progress: number = 0;
   let offsetX: number = 0.5;
-  let time: number = defaultTime;
+  let time: number = 0;
   let reqId: null | number = null;
 
   // SVG Path
@@ -55,7 +52,7 @@ export default function BouncyString({
   const animateOut = () => {
     if (Math.abs(progress) > 0.75) {
       const newProgress = progress * Math.sin(time);
-      progress = lerp({ start: progress, goal: 0, step: 0.025 });
+      progress = lerp({ start: progress, goal: 0, step });
       time += 0.2;
       setPath(newProgress);
       reqId = requestAnimationFrame(animateOut);
@@ -66,7 +63,7 @@ export default function BouncyString({
 
   // resetting animation if a new one initiated before the curret one is finished
   const resetAnimation = () => {
-    time = defaultTime;
+    time = 0;
     progress = 0;
   };
 
