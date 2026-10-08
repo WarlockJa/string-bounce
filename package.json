@@ -9,20 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^16.3.4",
+    "next": "^16.4.0",
     "react": "^19",
     "react-dom": "^19",
-    "sass": "^1.104.0"
+    "sass": "^1.105.1"
   },
   "devDependencies": {
     "@types/node": "^26",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^10",
-    "eslint-config-next": "^16.3.4",
+    "eslint-config-next": "^16.4.0",
     "typescript": "^7.0.2"
-  },
-  "overrides": {
-    "@humanfs/node": "^0.16.8"
   }
 }
